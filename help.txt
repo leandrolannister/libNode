@@ -1,1 +1,4 @@
 npm init -y -> Yes for all questions
+
+npm install chalk@4.2.1
+npm install nodemon --save-dev

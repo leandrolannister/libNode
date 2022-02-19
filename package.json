@@ -1,0 +1,25 @@
+{
+  "name": "markup",
+  "version": "1.0.0",
+  "description": "libNode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrolannister/libNode.git"
+  },
+  "keywords": [],
+  "author": "hendrix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandrolannister/libNode/issues"
+  },
+  "homepage": "https://github.com/leandrolannister/libNode#readme",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {}
+}
