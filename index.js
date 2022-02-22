@@ -1,18 +1,18 @@
 class Index {
-    constructor() {
-        this._chalk = require('chalk');
+    constructor(path) {
         this._fs = require('fs');
+        this._path = path;
+        this._enconding = "utf-8";
+        this._chalk = require('chalk');        
     }
-
-    redFile(path) {
-        const enconding = "utf-8";
+    redFile() {
         //_ dentro da função ignora o valor do primeiro parâmetro
-        this._fs.readFile(path, enconding, (_, text) => {
-            console.log(this._chalk.green(text));
+        this._fs.readFile(this._path, this._enconding, (_, fileText) => {
+            console.log(this._chalk.green(fileText));
         });
     }
 }
 
-let index = new Index();
-index.redFile('./files/text.md');
+let index = new Index('./app/files/text.md');
+index.redFile();
 
