@@ -4,3 +4,4 @@ let file = new File('./src/files/text.md');
 
 file.redFile();
 file.readFile_1();
+file.readFile_2();

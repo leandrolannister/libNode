@@ -24,6 +24,15 @@ class File {
         .then((text) => console.log(this._chalk.bgGrey(text))) 
         .catch((error) => this.getError(error));
     }
+
+    async readFile_2(){
+        try {
+           let text = await this._fs.promises.readFile(this._path,this._enconding);
+           console.log(this._chalk.cyanBright(text));
+        }catch(error){
+            this.getError(error);
+        }   
+    }
 }
 
 module.exports = File;
