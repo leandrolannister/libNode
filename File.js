@@ -28,11 +28,23 @@ class File {
     async readFile_2(){
         try {
            let text = await this._fs.promises.readFile(this._path,this._enconding);
-           console.log(this._chalk.cyanBright(text));
+           console.log(this.links(text));
+           
         }catch(error){
             this.getError(error);
         }   
-    }
+    }    
+
+    links(texto) {
+       const regex = /\[([^\]]*)\]\((https?:\/\/[^$#\s].[^\s]*)\)/gm;
+       const results = [];
+       let temp;
+       
+       while((temp = regex.exec(texto)) !== null) {
+          results.push({ [temp[1]]: temp[2] })
+       }      
+       return results;
+    }    
 }
 
 module.exports = File;
