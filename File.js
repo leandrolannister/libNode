@@ -40,8 +40,10 @@ class File {
        const results = [];
        let temp;
        
-       while((temp = regex.exec(texto)) !== null) {
-          results.push({ [temp[1]]: temp[2] })
+       while( (temp = regex.exec(texto) ) !== null) {
+          results.push({ 
+              [temp[1]]: temp[2] //Grupos do Regexp
+         });
        }      
        return results;
     }    
