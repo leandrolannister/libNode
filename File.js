@@ -1,3 +1,5 @@
+const { log } = require('console');
+
 class File {
     
     constructor(path) {
@@ -28,8 +30,7 @@ class File {
     async readFile_2(){
         try {
            let text = await this._fs.promises.readFile(this._path,this._enconding);
-           console.log(this.links(text));
-           
+           return text;           
         }catch(error){
             this.getError(error);
         }   
@@ -37,15 +38,15 @@ class File {
 
     links(texto) {
        const regex = /\[([^\]]*)\]\((https?:\/\/[^$#\s].[^\s]*)\)/gm;
-       const results = [];
+       const links = [];
        let temp;
        
        while( (temp = regex.exec(texto) ) !== null) {
-          results.push({ 
+          links.push({ 
               [temp[1]]: temp[2] //Grupos do Regexp
          });
        }      
-       return results;
+       console.log(links);
     }    
 }
 
