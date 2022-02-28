@@ -1,9 +1,8 @@
 const File = require('./File.js');
 
-let file = new File('./src/files/texto.md');
+const path = process.argv;
 
-// file.redFile();
-// file.readFile_1();
+let file = new File(path[2]);
 
 file.readFile_2().then((texto) => {
     file.links(texto);
@@ -11,4 +10,5 @@ file.readFile_2().then((texto) => {
     console.log(`Error: ${error} on readFile`);
 });
 
-  
+// file.redFile();
+// file.readFile_1();  
