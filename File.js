@@ -1,4 +1,5 @@
 const { log } = require('console');
+const { runInThisContext } = require('vm');
 
 class File {
     
@@ -30,7 +31,7 @@ class File {
     async readFile_2(){
         try {
            let text = await this._fs.promises.readFile(this._path,this._enconding);
-           return text;           
+           return this.links(text);        
         }catch(error){
             this.getError(error);
         }   
@@ -46,7 +47,7 @@ class File {
               [temp[1]]: temp[2] //Grupos do Regexp
          });
        }      
-       console.log(links);
+      return links.length === 0 ? "links was found" : links;
     }    
 }
 
