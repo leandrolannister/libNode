@@ -7,6 +7,7 @@ class Http {
    async lookUpLinks(data){
       let links = this.getUrl(data);
       let status = await  this.lookUpStatus(links);
+      
       console.log(status);
    } 
    
