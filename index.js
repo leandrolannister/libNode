@@ -14,4 +14,5 @@ async function main() {
    }
 }
 
-main();
+main().then(success => success)
+.catch(error => error);

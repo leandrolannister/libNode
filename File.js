@@ -1,6 +1,3 @@
-const { log } = require('console');
-const { runInThisContext } = require('vm');
-
 class File {
     
     constructor(path) {

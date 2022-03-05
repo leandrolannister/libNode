@@ -3,5 +3,6 @@ npm init -y -> Yes for all questions
 npm install chalk@4.1.2
 npm install nodemon --save-dev
 npm install node-fetch@2.6.1
+npm i --save-dev jest@27.0.6 ->Tests
 
 npm run {scriptName} => Execute script created on package.js
